@@ -1,0 +1,18 @@
+• make ability to send other users workouts
+	• use-case for this is for coaches to send them to their client
+• add weights -- will have to tie these to reps (ex. 4 sets of 10 reps @ 45 lbs)
+• add time based exercises (running, planks, etc.)
+• add supersets [CHECK!]
+• add time in between exercises -- rest in between sets AND exercises... maybe punt on this one for now
+• add notes section (be careful with this as you don't want to make a free database)
+• change Workout to Routine, and Exercise to Workout. That seems appropriate.
+• need a better name for Cadence though, is there even a name for this!?!
+• add login support through either Facebook or Google, or both. Find differences.
+
+Workout
+	• can you have it without an exercise? yes
+Exercise
+	• can you have it without a workout? yes, these should be able to be moved to other workouts
+	• can you have it without a cadence? yes, although uncommon you can workout without reps and sets
+	Cadence
+		• can you have it without an exercise? nope. this MUST be tied to an Exercise
