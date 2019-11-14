@@ -10,8 +10,8 @@ public class Workout {
 	public Workout(long id, String name, long reps, long sets) {
 		this.id = id;
 		this.name = name;
-		this.reps = reps;
 		this.sets = sets;
+		this.reps = reps;
 	}
 
 	public long getId() {
