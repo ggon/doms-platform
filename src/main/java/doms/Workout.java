@@ -2,31 +2,18 @@ package doms;
 
 public class Workout {
 
-	private final long id;
-	private final String name;
-	private final long reps;
-	private final long sets;
+    public final String name;
+    public Cadence cadence;
 
-	public Workout(long id, String name, long reps, long sets) {
-		this.id = id;
-		this.name = name;
-		this.sets = sets;
-		this.reps = reps;
-	}
+    public Workout(String name) {
+        this.name = name;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public void addCadence(Cadence cadence) {
+        this.cadence = cadence;
+    }
 
-	public String getName() {
-		return name;
-	}
-
-	public long getReps() {
-		return reps;
-	}
-
-	public long getSets() {
-		return sets;
-	}
+    public String getName(){
+        return this.name;
+    }
 }
