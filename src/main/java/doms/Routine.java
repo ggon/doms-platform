@@ -5,8 +5,11 @@ import java.util.List;
 
 public class Routine {
 
-	private final String name;
-	private final List<Workout> workouts = new ArrayList<>();
+	private String name;
+	private List<Workout> workouts = new ArrayList<>();
+
+	public Routine() {
+	}
 
 	public Routine(String name) {
 		this.name = name;

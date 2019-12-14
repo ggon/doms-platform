@@ -10,6 +10,10 @@ public class RoutineManager {
         return new Routine(name);
     }
 
+    public Routine getRoutine(long id) {
+        return new Routine("id_"+id+"_routine");
+    }
+
     public void addWorkoutToRoutine(long routineId, long workoutId) {
         // insert into database the
     }

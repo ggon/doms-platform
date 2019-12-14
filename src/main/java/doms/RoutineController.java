@@ -1,11 +1,6 @@
 package doms;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.*;
 
 /*
 	A Routine is a set of workouts.
@@ -16,9 +11,14 @@ public class RoutineController {
 
 	private final RoutineManager routineManager = new RoutineManager();
 
-	@RequestMapping(value="/routine", method=RequestMethod.POST)
-	public Routine routine(@RequestParam String name) {
-		return routineManager.createRoutine(name);
+	@PostMapping(value="/routine", consumes = "application/json")
+	public Routine createRoutine(@RequestBody Routine routine) {
+		return routineManager.createRoutine(routine.getName());
+	}
+
+	@GetMapping(value="/routine/{id}")
+	public Routine getRoutine(@PathVariable("id") long id) {
+		return routineManager.getRoutine(id);
 	}
 
 }
