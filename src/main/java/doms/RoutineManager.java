@@ -1,13 +1,18 @@
 package doms;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class RoutineManager {
 
-    public RoutineManager(){
-        System.out.println("ok workout manager is initailized now");
-    }
+    @Autowired
+    private RoutineRepository routineRepository;
 
     public Routine createRoutine(String name) {
-        return new Routine(name);
+        Routine someNewRoutine = new Routine(name);
+        routineRepository.save(someNewRoutine);
+        return someNewRoutine;
     }
 
     public Routine getRoutine(long id) {

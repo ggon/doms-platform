@@ -1,4 +1,4 @@
-.PHONY: compile build run run-database
+.PHONY: compile build clean run
 
 compile:
 	./gradlew build
@@ -6,9 +6,9 @@ compile:
 build: compile
 	docker build -t doms:latest .
 
-run:
-	docker run -d -p 8080:8080 doms:latest
+clean:
+	docker kill domsplatform
+	docker rm domsplatform
 
-run-database:
-	# do we want this here? hmmmmm...
-	docker run --name domsdb -e MYSQL_ROOT_PASSWORD=g4a4b4i4 -d mysql:latest
+run:
+	docker run --network=domnet --name domsplatform -d -p 8080:8080 doms:latest

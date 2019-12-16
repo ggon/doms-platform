@@ -1,5 +1,6 @@
 package doms;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /*
@@ -9,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class RoutineController {
 
-	private final RoutineManager routineManager = new RoutineManager();
+	@Autowired
+	private RoutineManager routineManager;
 
 	@PostMapping(value="/routine", consumes = "application/json")
 	public Routine createRoutine(@RequestBody Routine routine) {

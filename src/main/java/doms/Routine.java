@@ -1,14 +1,19 @@
 package doms;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
 
+@Entity
+@Table(name="routines")
 public class Routine {
 
-	private String name;
-	private List<Workout> workouts = new ArrayList<>();
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	private Long id;
 
-	public Routine() {
+	@Column
+	private String name;
+
+	protected Routine() {
 	}
 
 	public Routine(String name) {
@@ -17,5 +22,9 @@ public class Routine {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }
